@@ -8,7 +8,60 @@
 
 <!DOCTYPE html>
 <html lang="en">
+<script>
+function validateForm(){
+	var name = document.forms["myForm"]["firstname"].value;
+	var email = document.forms["myForm"]["email"].value;
+	var address = document.forms["myForm"]["address"].value;
+	var city = document.forms["myForm"]["city"].value;
+    var state = document.forms["myForm"]["state"].value;
+	var zip = document.forms["myForm"]["zip"].value;
+	var cardname = document.forms["myForm"]["cardname"].value;
+	var cardnumber = document.forms["myForm"]["cardnumber"].value;
+    var expmonth = document.forms["myForm"]["expmonth"].value;
+	var expyear = document.forms["myForm"]["expyear"].value;
+	var cvv = document.forms["myForm"]["cvv"].value;
 
+	if (name.length<1 || typeof name !== 'string' ) {
+        document.getElementById('error-name').innerHTML = " Please Enter A Valid Name *";
+    }
+    if (email.length<1 || typeof email !== 'string' ) {
+        document.getElementById('error-email').innerHTML = " Please Enter A Valid Email *";
+    }
+    if (address.length<1 || typeof address !== 'string' ) {
+        document.getElementById('error-address').innerHTML = " Please Enter A Valid Address *";      
+    }
+    if (city.length<1 || typeof city !== 'string' ) {
+        document.getElementById('error-city').innerHTML = " Please Enter A Valid City *";
+    }          
+    if (state.length<1 || state.length>2) {
+        document.getElementById('error-state').innerHTML = " Please Enter A Valid Province *";
+    }
+    if (zip.length<1 || || zip.length>7) {
+        document.getElementById('error-zip').innerHTML = " Please A Valid Postal Code *";
+    }
+    if (cardname.length<1 || typeof cardname !== 'string' ) {
+        document.getElementById('error-cardName').innerHTML = " Please Enter A Valid Card Name *";      
+    }
+    if (cardnumber.length<1 || cardnumber.length > 16 || typeof cardnumber !== 'integer' ) {
+        document.getElementById('error-cardNum').innerHTML = " Please Enter A Valid Card Number *";
+    }          
+    if (expmonth.length<1 || expmonth.length > 2) {
+        document.getElementById('error-expireMonth').innerHTML = " Please Enter A Valid Month*";
+    }
+    if (expyear.length<1 || expyear<2020) {
+        document.getElementById('error-expireYear').innerHTML = " Please Enter A Valid Year *";
+    }
+    if (cvv.length<1 || cvv.length > 3 || typeof cvv !== 'string' ) {
+        document.getElementById('error-cvv').innerHTML = " Please Enter A valid CVV *";      
+    }    
+    if(name.length<1 || email.length<1 || address.length<1 || city.length<1 || state.length<1 || zip.length<1 || cardname.length<1 || cardnumber.length<1 
+     || expmonth.length<1 || expyear.length<1 || cvv.length<1){
+       	return false;
+    }            
+}
+</script>
+    
 <!-- The head should contain an appropriate title for your site -->
 <head>
     <title>Module 5 - Lab</title>
@@ -329,26 +382,26 @@ ul.topnav li.right {float: right;}
                         </p>
   <div class="col-75">
     <div class="container">
-      <form>
+      <form name="myForm" method="post" onsubmit="return validateForm()">
 
         <div class="row">
           <div class="col-50">
             <h3>Billing Address</h3>
-            <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+            <label for="fname"> <span id="error-name"></span><i class="fa fa-user"></i> Full Name</label>
             <input type="text" id="fname" name="firstname" placeholder="Justin Smith">
-            <label for="email"><i class="fa fa-envelope"></i> Email</label>
+            <label for="email"> <span id="error-email"></span><i class="fa fa-envelope"></i> Email</label>
             <input type="text" id="email" name="email" placeholder="jackcarles@email.com">
-            <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+            <label for="adr"> <span id="error-address"></span><i class="fa fa-address-card-o"></i> Address</label>
             <input type="text" id="adr" name="address" placeholder="123 Oakwood St.">
-            <label for="city"><i class="fa fa-institution"></i> City</label>
+            <label for="city"> <span id="error-city"></span><i class="fa fa-institution"></i> City</label>
             <input type="text" id="city" name="city" placeholder="Toronto"> 
             <div class="row">
           <div class="col-50">
-                <label for="state">Province</label>
+                <label for="state"> <span id="error-state"></span>Province</label>
                 <input type="text" id="state" name="state" placeholder="ON">
               </div>
               <div class="col-50">
-                <label for="zip">Postal Code</label>
+                <label for="zip"> <span id="error-zip"></span>Postal Code</label>
                 <input type="text" id="zip" name="zip" placeholder="M1A 4R2"> 
                 </div>
               </div>
@@ -356,20 +409,20 @@ ul.topnav li.right {float: right;}
 
           <div class="col-50">
             <h3>Payment</h3>
-            <label for="cname">Name on Card</label>
+            <label for="cname"> <span id="error-cardName"></span>Name on Card</label>
             <input type="text" id="cname" name="cardname" placeholder="Justin Smith">
-            <label for="ccnum">Credit card number</label>
+            <label for="ccnum"> <span id="error-cardNum"></span>Credit card number</label>
             <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
-            <label for="expmonth">Exp Month</label>
+            <label for="expmonth"> <span id="error-expireMonth"></span>Exp Month</label>
             <input type="text" id="expmonth" name="expmonth" placeholder="October">
 
             <div class="row">
               <div class="col-50">
-                <label for="expyear">  Exp Year</label>
+                <label for="expyear"><span id="error-expireYear"></span>  Exp Year</label>
                 <input type="text" id="expyear" name="expyear" placeholder="2020">
               </div>
               <div class="col-50">
-                <label for="cvv">CVV</label>
+                <label for="cvv"><span id="error-cvv"></span>CVV</label>
                 <input type="text" id="cvv" name="cvv" placeholder="242">
               </div>
             </div>
