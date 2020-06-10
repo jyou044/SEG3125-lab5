@@ -63,9 +63,9 @@ ul.topnav li.right {float: right;}
     
 <ul class="topnav">
   <li><a class="active" href="#home">About</a></li>
-  <li><a href="#news">Services</a></li>
-  <li><a href="#contact">Our Staff</a></li>
-  <li class="right"><a href="#about">Checkout</a></li>
+  <li><a href="#services">Services</a></li>
+  <li><a href="#staff">Our Staff</a></li>
+  <li class="right"><a href="#checkout">Checkout</a></li>
 </ul>
         <!-- Bootstrap has components for alerts: https://www.w3schools.com/bootstrap4/bootstrap_alerts.asp  -->
     <!-- These can be useful for making sure someone reads something before continuing -->
@@ -99,7 +99,7 @@ ul.topnav li.right {float: right;}
     </div>
        
     <!-- When you have messages to tell, remember that center align is not always the best choice -->
-    <div class="container-md p-3 my-3 border bg-light text-success">
+    <div class="container-md p-3 my-3 border bg-light text-success" id="home">
         <h3>Our history</h3>
         <p>We at Jason's Fabulous Hair Salon have been cutting hair since 1996.
         We have a history and a reputation for being one of the best hair salons in the city. On this site,
@@ -108,7 +108,7 @@ ul.topnav li.right {float: right;}
     
     <!-- Bootstrap has different types of tables https://www.w3schools.com/bootstrap4/bootstrap_tables.asp -->
     <!-- Might be (or not) useful to show some information to the user -->
-    <div class="container">
+    <div class="container" id="services">
         <h2>Service description</h2>
         <p>Here is a list of services offered</p>            
         <table class="table table-primary table-hover">
@@ -207,7 +207,7 @@ ul.topnav li.right {float: right;}
     <!-- Card columns allows multiple cards next to each other -->
     <!-- The first card's button doesn't go anywhere, it could be a modal --> 
     <!-- My second card limits the information seen and uses collapsible to show more -->
-    <div class="container p-3">
+    <div class="container p-3" id="staff">
         <h2>Our Staff</h2>
         <p>Please select your preferred stylist(s)</p>
         <div class="card-columns">
@@ -245,7 +245,7 @@ ul.topnav li.right {float: right;}
     <!-- https://www.w3schools.com/bootstrap4/bootstrap_collapse.asp -->
     <!-- As we want to do a vertical navigation better suited for mobile design, an accordion pattern -->
     <!-- could work well.  You can use other patterns too.  This is just an example. -->
-    <div class="container">
+    <div class="container" id="checkout">
         <div class="container-md p-3 my-3 border bg-warning text-white">
             <h1>Jason's Fabulous Hair Salon</h1>
             <p>Appointments and Contact Info</p>
