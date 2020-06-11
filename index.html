@@ -2,15 +2,26 @@
 <!-- This file contains many elements adapted from the online tutoral -->
 <!-- on Bootstrap 4 as found here: https://www.w3schools.com/bootstrap4/default.asp -->
 
-<!-- Images source: -->
-<!-- jule.jpg taken from https://www.freepik.com/premium-vector/cartoon-successful-hairdresser_3951066.htm -->
-<!-- Erwind.jpb https://www.kijiji.ca/v-construction-trades-jobs/winnipeg/bicycle-mechanic/1499188319 -->
+<!-- Code for the date constraints inspired by https://stackoverflow.com/questions/45529028/html-input-type-date-field-constraints -->
 
 <!DOCTYPE html>
 <html lang="en">
-<script>
-var today = new Date().toISOString().split('T')[0];
-document.getElementsById("dateTimeInput")[0].setAttribute('min', today);
+<script>	
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth() + 1; //January is 0!
+var yyyy = today.getFullYear();
+
+if (dd < 10) {
+  dd = '0' + dd
+}
+
+if (mm < 10) {
+  mm = '0' + mm
+}
+
+today = yyyy + '-' + mm + '-' + dd;
+document.getElementById('dateTimeInput').setAttribute("min", today);
 	
 function validateForm(){
 	var name = document.forms["myForm"]["firstname"].value;
