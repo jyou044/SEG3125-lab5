@@ -9,6 +9,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <script>
+var today = new Date().toISOString().split('T')[0];
+document.getElementsById("dateTimeInput")[0].setAttribute('min', today);
+	
 function validateForm(){
 	var name = document.forms["myForm"]["firstname"].value;
 	var email = document.forms["myForm"]["email"].value;
