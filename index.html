@@ -379,7 +379,7 @@ ul.topnav li.right {float: right;}
                         <p>
                          **DISCLAIMER: We are asking for your credit card information in the event of last minute cancellations.
                          We will provide refunds for cancellations of appointments until 12 hours before your appointment time.
-		         Please follow the format given for the input values. 
+		         Please follow the format given for the input values. * All inputs are required. *
                         </p>
   <div class="col-75">
     <div class="container">
@@ -389,21 +389,21 @@ ul.topnav li.right {float: right;}
           <div class="col-50">
             <h3>Billing Address</h3>
             <label for="fname"> <span id="error-name"></span><i class="fa fa-user"></i> Full Name</label>
-            <input type="text" id="fname" name="firstname" placeholder="Justin Smith">
+            <input type="text" id="fname" name="firstname" placeholder="Justin Smith" required>
             <label for="email"> <span id="error-email"></span><i class="fa fa-envelope"></i> Email</label>
-            <input type="text" id="email" name="email" placeholder="jackcarles@email.com">
+            <input type="text" id="email" name="email" placeholder="jackcarles@email.com" required>
             <label for="adr"> <span id="error-address"></span><i class="fa fa-address-card-o"></i> Address</label>
-            <input type="text" id="adr" name="address" placeholder="123 Oakwood St.">
+            <input type="text" id="adr" name="address" placeholder="123 Oakwood St." required>
             <label for="city"> <span id="error-city"></span><i class="fa fa-institution"></i> City</label>
-            <input type="text" id="city" name="city" placeholder="Toronto"> 
+            <input type="text" id="city" name="city" placeholder="Toronto" required> 
             <div class="row">
           <div class="col-50">
                 <label for="state"> <span id="error-state"></span>Province</label>
-                <input type="text" id="state" name="state" placeholder="ON">
+                <input type="text" id="state" name="state" placeholder="ON" required>
               </div>
               <div class="col-50">
                 <label for="zip"> <span id="error-zip"></span>Postal Code</label>
-                <input type="text" id="zip" name="zip" placeholder="M1A 4R2"> 
+                <input type="text" id="zip" name="zip" placeholder="M1A 4R2" required> 
                 </div>
               </div>
           </div>
@@ -411,20 +411,20 @@ ul.topnav li.right {float: right;}
           <div class="col-50">
             <h3>Payment</h3>
             <label for="cname"> <span id="error-cardName"></span>Name on Card</label>
-            <input type="text" id="cname" name="cardname" placeholder="Justin Smith">
+            <input type="text" id="cname" name="cardname" placeholder="Justin Smith" required>
             <label for="ccnum"> <span id="error-cardNum"></span>Credit card number</label>
-            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444" required>
             <label for="expmonth"> <span id="error-expireMonth"></span>Exp Month</label>
-            <input type="text" id="expmonth" name="expmonth" placeholder="October">
+            <input type="text" id="expmonth" name="expmonth" placeholder="October" required>
 
             <div class="row">
               <div class="col-50">
                 <label for="expyear"><span id="error-expireYear"></span>  Exp Year</label>
-                <input type="text" id="expyear" name="expyear" placeholder="2020">
+                <input type="text" id="expyear" name="expyear" placeholder="2020" required>
               </div>
               <div class="col-50">
                 <label for="cvv"><span id="error-cvv"></span>CVV</label>
-                <input type="text" id="cvv" name="cvv" placeholder="242">
+                <input type="text" id="cvv" name="cvv" placeholder="242" required>
               </div>
             </div>
           </div>
