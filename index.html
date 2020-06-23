@@ -19,7 +19,11 @@ if (dd < 10) {
 if (mm < 10) {
   mm = '0' + mm
 }
-
+var minimumDate = dateParser(MyProfile.nextDistDate);
+if(today.getDay() >= 3 && today.getHours() >= 10){
+    minimumDate.setDate(minimumDate.getDate()+7);
+}
+	
 today = yyyy + '-' + mm + '-' + dd;
 document.getElementById('dateTimeInput').setAttribute("min", today);
 	
